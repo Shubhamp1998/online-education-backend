@@ -1,0 +1,21 @@
+package com.farmerservice.systemfarmer;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.systemstudent.model.CropsDetails;
+import com.systemstudent.repo.CropsRepository;
+
+@SpringBootTest
+public class Test {
+	
+	@Autowired
+	private CropsRepository repo;
+	
+	@org.junit.jupiter.api.Test
+	public void getAll() {
+		CropsDetails crop = new CropsDetails();
+	
+	}
+
+}

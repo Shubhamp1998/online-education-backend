@@ -1,0 +1,19 @@
+package com.systemstudent.repo;
+
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.systemstudent.model.StudentDetails;
+
+public interface StudentRepository extends MongoRepository<StudentDetails, String> {
+
+	Optional<StudentDetails> findById(String studentId);
+
+	void deleteById(String studentId);
+
+//	void insert(StudentDetails student);
+
+	
+
+}

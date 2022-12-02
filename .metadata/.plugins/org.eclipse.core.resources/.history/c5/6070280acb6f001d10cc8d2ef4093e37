@@ -1,0 +1,5 @@
+package com.systemmanagement.exception;
+
+public class ErrorMessage {
+
+}

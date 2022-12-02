@@ -1,0 +1,11 @@
+#spring.application.name=AdminMicroservice
+#server.port = 8094
+#spring.data.mongodb.host=localhost
+#spring.data.mongodb.port=27017
+#spring.data.mongodb.database=Admindata
+#spring.application.name=farmerservice
+
+server.port=8092
+spring.application.name=admin_microservice
+spring.data.mongodb.database=AgricultureCropSystem
+spring.data.mongodb.uri=mongodb+srv://shubpol:tiger@cluster0.pruiuod.mongodb.net/AdminDB?retryWrites=true&w=majority

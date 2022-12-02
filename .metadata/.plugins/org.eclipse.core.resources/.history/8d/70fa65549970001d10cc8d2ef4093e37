@@ -1,0 +1,18 @@
+package com.systemadmin.repo;
+
+//import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+//import com.systemadmin.model.CropDetails;
+import com.systemadmin.model.StaffDetails;
+//import com.systemadmin.model.FarmerDetails;
+
+
+@Repository
+public interface DealerRepository extends MongoRepository<StaffDetails, Long> {
+
+	  Optional<StaffDetails> findByDealerId(Long dealerId);
+}

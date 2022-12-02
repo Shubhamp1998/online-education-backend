@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.systemmanagement.repository.UsersRepository"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.repository.RoleRepository"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.security.services.UsersDetailsImpl"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.payload.response.JwtResponses"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.model.Users"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.model.Role"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.model.RoleType"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.payload.response.MessageResponses"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.security.jwt.JwtUtils"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.payload.request.LoginRequests"/>
+    <fullyQualifiedTypeName name="com.systemmanagement.payload.request.SignupRequests"/>
+</qualifiedTypeNameHistroy>

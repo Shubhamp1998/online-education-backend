@@ -1,0 +1,26 @@
+package com.systemstudent.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.systemstudent.model.CourseDetails;
+import com.systemstudent.repo.StudentRepository;
+
+@Service
+public class StudentService {
+	@Autowired
+	
+	public StudentRepository studentRepository;
+	
+	public String addStudent(CourseDetails student) {
+		studentRepository.insert(student);
+		return "";
+	}
+	
+	public String deleteStudent(String studentId) {
+		studentRepository.deleteById(studentId);
+		return "Student Deleted Successfully";
+
+	}
+
+}

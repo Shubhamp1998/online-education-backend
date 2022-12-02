@@ -1,0 +1,58 @@
+package com.systemadmin.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="StaffDetails")
+public class StaffDetails {
+	
+	@Id
+	private Long staffId;
+	private String name;
+	private String emailId;
+	private String mobileNumber;
+	
+	public StaffDetails() {
+		super();
+	}
+	
+	public StaffDetails( Long staffId ,String name, String emailId, String mobileNumber) {
+		super();
+		this.staffId=staffId;
+		this.name = name;
+		this.emailId = emailId;
+		this.mobileNumber = mobileNumber;
+	}
+
+	
+	
+	public Long getStaffId() {
+		return staffId;
+	}
+
+	public void setStaffId(Long staffId) {
+		this.staffId = staffId;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+	
+	
+
+}

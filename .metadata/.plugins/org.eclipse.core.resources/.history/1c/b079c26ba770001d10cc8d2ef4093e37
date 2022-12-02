@@ -1,0 +1,23 @@
+package com.systemadmin.repo;
+
+//import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.stereotype.Repository;
+
+//import com.systemadmin.model.CropDetails;
+//import com.systemadmin.model.DealersDetails;
+import com.systemadmin.model.StudentDetails;
+
+@EnableMongoRepositories
+@Repository
+public interface StudentRepository extends MongoRepository<StudentDetails, String> {
+
+	void deleteById(Long studentId);
+
+	Optional<StudentDetails> findByUserName(String username);
+	  
+	
+}

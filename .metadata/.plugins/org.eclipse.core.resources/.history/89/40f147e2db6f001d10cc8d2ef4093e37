@@ -1,0 +1,5 @@
+package com.systemstudent.model;
+
+public class StudentDetails {
+
+}

@@ -1,0 +1,62 @@
+package com.systemadmin.controller;
+
+import java.util.List;
+//import java.util.List;
+import java.util.Optional;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.client.RestTemplate;
+
+import com.systemadmin.model.StudentDetails;
+import com.systemadmin.repo.CourseRepository;
+import com.systemadmin.repo.FarmerRepository;
+import com.systemadmin.model.CourseDetails;
+import com.systemadmin.model.StaffDetails;
+
+@CrossOrigin(origins="http://localhost:3000")
+@RestController
+@RequestMapping("/api")
+public class AdminController {
+	
+	@Autowired
+	FarmerRepository repo;
+			
+	@GetMapping(/allStudent)
+	public List<StudentDetails> getAllStudentDetails(){
+		return repo.findAll();
+	}
+	
+	 @RequestMapping(value="/farmer/{id}",method=RequestMethod.GET)
+	  public Optional<StudentDetails> getFarmerDetails(@PathVariable("id") String userName ) {
+		//return repo.findByUserName(userName);
+		 return repo.findByUserName(userName);
+	  }
+	
+//	 @RequestMapping(value="/farmer",method=RequestMethod.GET)
+//	  public Optional<FarmerDetails> getAdminDetails(@PathVariable String id) {
+//		return repo.findById(id);
+//	  }
+	 
+	 @RequestMapping(value="/addfarmer",method=RequestMethod.POST)
+	  public void addFarmerDetails(@RequestBody StudentDetails crops) {
+		  repo.insert(crops);
+	  }
+	 @RequestMapping(value="/putfarmer",method=RequestMethod.PUT)
+	  public void addAdminDetails(@RequestBody StudentDetails farmers) {
+	  repo.insert(farmers);
+	  }
+	 
+
+}

@@ -1,0 +1,6 @@
+server.port=8096
+spring.application.name=farmerservice
+#spring.data.mongodb.database=AgricultureCropSystem
+#spring.data.mongodb.uri=mongodb+srv://nitishkumar:nitish1004@cluster1004.ljaiz.mongodb.net/AgricultureCropSystem?retryWrites=true&w=majority
+
+spring.data.mongodb.uri=mongodb+srv://shubpol:tiger@cluster0.pruiuod.mongodb.net/studentDB?retryWrites=true&w=majority

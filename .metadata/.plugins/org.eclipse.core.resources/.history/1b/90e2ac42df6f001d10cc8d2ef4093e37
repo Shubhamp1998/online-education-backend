@@ -1,0 +1,5 @@
+package com.systemstudent.repo;
+
+public class StudentRepository {
+
+}

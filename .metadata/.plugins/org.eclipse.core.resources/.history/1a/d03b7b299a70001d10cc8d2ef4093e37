@@ -1,0 +1,22 @@
+package com.systemadmin.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="Cropslist")
+public class CourseDetails {
+	
+	@Id
+	private String courseId;
+	private String studentId;
+	private String courseName;
+	private String courseType;
+	private double fees;
+	
+	public CourseDetails() {
+		super();
+	}
+
+	
+	
+}

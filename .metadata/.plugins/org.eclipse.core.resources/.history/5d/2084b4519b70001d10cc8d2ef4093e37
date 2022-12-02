@@ -1,0 +1,37 @@
+package com.systemadmin.model;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.springframework.data.annotation.Id;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="StudentDetails")
+public class StudentDetails {
+	@Id
+	private String studentId;
+	
+	@NotBlank
+	@Size(max = 20)
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "Accepts only alphabets")
+	private String username;
+	
+	@NotNull
+	private String studentName;
+	
+	@NotBlank(message = "Email Should Not Be Blank")
+	@Size(max = 50)
+	@Email
+	@Pattern(regexp = "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}", message = "Please enter a valid email!")
+	private String email;
+	
+	@NotNull
+	@Pattern(regexp = "^\\d{10}$")
+	private String mobNo;
+	@NotNull
+	private String courseId;
+}

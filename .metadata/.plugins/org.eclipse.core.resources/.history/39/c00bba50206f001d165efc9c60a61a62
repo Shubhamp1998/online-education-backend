@@ -1,0 +1,12 @@
+server.port=8001
+#spring.data.mongodb.uri=mongodb+srv://kpr-test:kpr-test@cluster0.d5bhv.mongodb.net/AgricultureCropSystem?retryWrites=true&w=majority
+bezkoder.app.jwtSecret= bezKoderSecretKey
+bezkoder.app.jwtExpirationMs= 86400000
+spring.application.name=login_service
+#spring.data.mongodb.uri=mongodb+srv://nitishkumar:nitish1004@cluster1004.ljaiz.mongodb.net/AgricultureCropSystem?retryWrites=true&w=majority
+
+#spring.data.mongodb.uri=mongodb+srv://shubpol:tiger@cluster0.pruiuod.mongodb.net/LoginDB?retryWrites=true&w=majority
+
+spring.data.mongodb.uri=mongodb://localhost:27017/LoginDB
+spring.data.mongodb.username=shubpol
+spring.data.mongodb.password=tiger

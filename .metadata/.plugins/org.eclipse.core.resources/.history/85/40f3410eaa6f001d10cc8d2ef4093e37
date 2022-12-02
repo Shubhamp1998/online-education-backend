@@ -1,0 +1,55 @@
+ package com.systemstudent.services;
+
+//import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.systemstudent.model.CourseDetails;
+import com.systemstudent.repo.CourseRepository;
+
+@Service
+public class StudentService {
+	@Autowired
+	public CourseRepository CropDetailsRepo;
+	private String cropId;
+
+	public Boolean addCrop(CourseDetails crop) {
+		CropDetailsRepo.insert(crop);
+		return true;
+	}
+
+	public List<CourseDetails> getAllCrop() {
+
+		return CropDetailsRepo.findAll();
+	}
+
+	public List<CourseDetails> getAllCropByFarmer(String studentId) {
+		return CropDetailsRepo.findByStudentId(studentId);
+	}
+
+	public boolean deleteCrop(String cropId) {
+		CropDetailsRepo.deleteById(cropId);
+		return true;
+
+	}
+
+	public String updateCrop(CourseDetails crop) {
+
+		CropDetailsRepo.save(crop);
+		return "Crop UPdated Successfully";
+	}
+
+	public List<CourseDetails> findAll() {
+		return CropDetailsRepo.findAll();
+	}
+
+	public Optional<CourseDetails> findById(String id) {
+		CropDetailsRepo.findById(cropId);
+		return null;
+	}
+
+
+}

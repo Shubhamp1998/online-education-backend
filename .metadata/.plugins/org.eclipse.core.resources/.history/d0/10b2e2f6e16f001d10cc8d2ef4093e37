@@ -1,0 +1,55 @@
+package com.systemstudent.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.systemstudent.model.CourseDetails;
+import com.systemstudent.model.StudentDetails;
+import com.systemstudent.repo.StudentRepository;
+import com.systemstudent.services.CourseService;
+
+@CrossOrigin("*")
+@RestController
+public class StudentController {
+	@Autowired
+	CourseService studentService;
+	
+	@Autowired
+	StudentRepository studentRepository;
+	
+	@GetMapping("/allStudent")
+	public List<StudentDetails> getAllStudentDetails(){
+		return studentRepository.findAll();
+	}
+	
+	@GetMapping("/student/{studentId}")
+	  public Optional<StudentDetails> getStudentDetail(@PathVariable String id) {
+		return studentRepository.findById(id);
+	  }
+
+	  @PostMapping("/addStudent")
+	  public void addStudentDetails(@RequestBody CourseDetails student) {
+		  studentRepository.insert(student);
+	  }
+
+	  @PutMapping("/student/{studentId}")
+	  public void updateStudentDetails(@PathVariable String id, @RequestBody StudentDetails student) {
+		  studentRepository.save(student);
+	  }
+	  
+	  @DeleteMapping("/course/{courseId}")
+	  public void deleteStudentDetails(@PathVariable String id) {
+	    studentRepository.deleteById(id);
+	  }
+
+}

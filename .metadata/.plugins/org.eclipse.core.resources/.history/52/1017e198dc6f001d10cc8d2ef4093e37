@@ -1,0 +1,66 @@
+package com.systemstudent.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.client.RestTemplate;
+
+import com.systemstudent.model.CourseDetails;
+import com.systemstudent.repo.CourseRepository;
+
+@CrossOrigin(origins="http://localhost:3000")
+@RestController
+@RequestMapping("/api")
+public class CourseController {
+	
+	
+
+	@Autowired
+    CourseRepository repo;
+	
+//	@RequestMapping(value="/course",method=RequestMethod.GET)
+	@GetMapping("/allCourse")
+	public List<CourseDetails> getAllCourseDetails(){
+		return repo.findAll();
+	}
+	
+//	@RequestMapping(value="/course/{courseId}",method=RequestMethod.GET)
+	@GetMapping("/course/{courseId}")
+	  public Optional<CourseDetails> getCourseDetails(@PathVariable String id) {
+		return repo.findById(id);
+	  }
+	
+//	@RequestMapping(value="/studentCourse/{courseId}",method=RequestMethod.GET)
+	@GetMapping("/studentCourse/{courseId}")
+	  public List<CourseDetails> getByStudentId(@PathVariable String studentId) {
+		return repo.findByStudentId(studentId);
+	  }
+	
+
+
+	  @RequestMapping(value="/course",method=RequestMethod.POST)
+	  @PostMapping("/addCourse")
+	  public void addCourseDetails(@RequestBody CourseDetails course) {
+		  repo.insert(course);
+	  }
+
+	  @RequestMapping(value="/course/{id}",method=RequestMethod.PUT)
+	  public void updateCourseDetails(@PathVariable String id, @RequestBody CourseDetails course) {
+		  repo.save(course);
+	  }
+
+	  @RequestMapping(value="/course/{courseId}",method=RequestMethod.DELETE)
+	  public void deleteCourseDetails(@PathVariable String id) {
+	    repo.deleteById(id);
+	  }
+
+}

@@ -1,0 +1,21 @@
+package com.systemstudent.model;
+
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collation = "StudentDetails")
+public class StudentDetails {
+	@Id
+	private String studentId;
+	@NotNull
+	private String studentName;
+	private String studentEmail;
+	private String mobNo;
+	private String courseId;
+
+
+
+
+}

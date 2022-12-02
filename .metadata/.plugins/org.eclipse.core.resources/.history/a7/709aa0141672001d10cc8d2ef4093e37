@@ -1,0 +1,5 @@
+package com.systemmanagement.repository;
+
+public class ResponceRepository {
+
+}

@@ -1,0 +1,14 @@
+
+package com.systemstudent.repo;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.systemstudent.model.CourseDetails;
+
+public interface CropsRepository extends MongoRepository<CourseDetails, String>{
+	
+	List<CourseDetails> findByFarmerId(String farmerId);
+   
+}
